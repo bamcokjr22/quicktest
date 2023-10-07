@@ -1,0 +1,21 @@
+{
+  "policies": [
+    {
+      "handler": {
+        "export": "SetHeadersInboundPolicy",
+        "module": "$import(@zuplo/runtime)",
+        "options": {
+          "headers": [
+            {
+              "name": "api-key",
+              "value": "$env(API_KEY)",
+              "overwrite": true
+            }
+          ]
+        }
+      },
+      "name": "set-origin-api-key",
+      "policyType": "set-headers-inbound"
+    }
+  ]
+}
